@@ -1,0 +1,21 @@
+equipement mme type --> cable croise
+equipement pas de mme type --> cable droit
+
+Donner des ids pour les pc pour qu`ils puissent communiquer(pour qu`ils deviennent connu dans le reseau) :
+@phys (@mac ): serial number on pp pas trouve 2 carte reseau with the same @
+@logique : ip adress
++ le masque
+
+ipconfig /all : pour assurer que le pc est bien configurer+pour savoir mon adress ip
+
+Le hub commence tjr par faire une diffusion ARP il envoie des packets ARP pour faire la corespondance entre adresse ip et adresse mac 
+Le switch fait pas ca 
+le ping envoie 4 packets et recoie 4 packets 
+meme les pc ont un cash qui contient les adreesse mac des pc qui leurs a deja envoyer le ping kima le switch pour les voir arp -a
+pour supprimer le cash arp -d
+pour voir la table des address mac on rentre dans le switch et on tap dans CLI sh mac-address-table 
+pour supp la table en mis enable ensuite clear mac-address-table
+a faire : la diff entre topologie4 et 5 et voir esque il affiche le port de s routeurs ou bien les add mac
+le switch diffuse a tous les ports seul celui qui l'a envoye 
+
+le hub n'a pas une table mac

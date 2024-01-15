@@ -1,0 +1,21 @@
+%{
+ #include "synt.tab.h"
+#include "string.h"
+ extern nb_ligne;
+ extern col;
+%}
+lettreM [A-Z]
+lettre [a-zA-Z]
+chiffre [0-9]
+IDF {lettreM}({lettre}|{chiffre})*
+%%
+CODE   {col = col + strlen(yytext); return mc_code;}
+START  {col = col + strlen(yytext); return mc_start;}
+"END." {col = col + strlen(yytext); return mc_end;}
+{IDF}  {if (yyleng <=7) printf (" idf ") ;
+		else {printf ("erreur lexicale : idf trop long\n") ; return err;}
+		col = col + strlen(yytext); return IDF; }
+[ \t]  {col = col + strlen(yytext);}
+\n   {col =1; nb_ligne++;}
+. {printf("erreur lexical a la ligne %d  la col %d entite %s \n",nb_ligne,col, yytext);
+	return err;}

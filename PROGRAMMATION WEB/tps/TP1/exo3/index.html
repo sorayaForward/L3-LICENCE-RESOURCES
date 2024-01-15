@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exo3</title>
+</head>
+<body>
+        <p align="left"><code>#include&lt;stdio.h&gt;</code>
+        <p align="left"></p><code>#include&lt;stdlib.h&gt;</code>
+        <p align="left"><blockquote>int main(){</p>
+        <p align="left">int matx1[10][10];
+        <p align="left">int i,j,row,col,Somme=0;</p>
+        <p align="left">printf("Combien de lignes et de colonnes?\n");</p>
+        <p align="left">scanf("%d%d",&row,&col);</p>
+        <p align="left">printf("\nEntrez les elements de la matrice:\n");</p>
+        <p align="left">for(i=0; i < row; ++i)</p>
+        <p align="left">for(j = 0; j < col; ++j)</p>
+        <p align="left">scanf("%d",&matx1[i][j]);</p>
+        <p align="left">printf("\nLa somme:\n");</p>
+        <p align="left">for(i = 0; i < row; ++i)</p>
+        <p align="left">{
+        <p align="left">for(j=0; j < col; ++j)
+        <p align="left">{
+        <p align="left">Somme = matx1[i][j] + Somme;
+        <p align="left">printf("%d ",Somme);
+        <p align="left">}
+        <p align="left">printf("\n");
+        <p align="left">}
+        <p align="left">return 0;
+        <p align="left">}
+
+
+<h1 align="center">Pré-formatage</h1>
+
+<pre>#include&lt;stdio.h&gt;
+     #include&lt;stdlib.h&gt;
+    int main()
+    {
+      int matx1[10][10];
+      int i,j,row,col,Somme=0;
+
+      printf("Combien de lignes et de colonnes?\n");
+      scanf("%d%d",&row,&col);
+
+      printf("\nEntrez les elements de la matrice:\n");
+      for(i=0; i < row; ++i)
+        for(j = 0; j < col; ++j)
+          scanf("%d",&matx1[i][j]);
+      printf("\nMatrice apr�s l'addition:\n");
+      for(i = 0; i < row; ++i)
+      {
+        for(j=0; j < col; ++j)
+        {
+          Somme = matx1[i][j] + Somme;
+          printf("%d ",Somme);
+        }
+        printf("\n");
+      }
+      return 0;
+    }
+
+</pre>
+
+
+</body>
+</html>

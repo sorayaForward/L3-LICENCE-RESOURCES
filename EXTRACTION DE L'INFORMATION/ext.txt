@@ -1,0 +1,62 @@
+UNICODE : on peut trouver utf8 utf16 ..
+ANSI encodage de la machine tt les cara code en 8bits safait 2^8 caractere
+windows-1252
+unitex works only with little indian (unicode3.0), if our file has another encoding so we have to convert it (inside unitext if we want)
+GN groupe nominale, on peut lui donner vers un model pour qu
+open the file concorde.html copy the code and pase it in notepad and save it with html and open it
+
+re.group to math paranteses in case if we want to math them in (.+)
+
+grammer :
+draw the automate
+cntr Y to enable the grammer
+cntr L and search 
+we can draw a grammer that calls another
+
+dictionary :
+write the dict : mangent:manger,V+pc
+open new file inside unitex 
+write the grammer (to check the syntaxe go to dela --> check format
+compress it ( dela --> compress into FST)
+appy it with cntrl+y
+
+Masque lexicaux ex <MOT> <WORD> .. c une requete qui connait une unite lexicale ou une suite d'unite lexicals ya deux type:
+       Masque lexicaux simple et complexes 
+in order to use it : cntr+L ,click on Regular expression and write the lexical mask --> search--> build concordance in order to see the known words
+on peut meme utiliser la negation ex <!MOT>
+il est meme possible de faire la concatenation ex <DET>.<A>.home A pour adj  DET pour determinant
+il est meme possible de faire l'union
+
+import sys,re
+print("le resultat est ==>",open("C:\Users\DELL\Desktop\l3\EXTRAINFO\80jours_mod.snt",encoding="utf-16").read().count("{S}")+1)
+
+look behind look ahead
+
+import sys,re
+t=[]
+for ligne in open('80jours_mod.txt','r',encoding="utf-16"):
+  ligne=re.sub("\n","",ligne)
+  t+=re.split("(?<![Mrs|Mr])[?\.](?!,)",ligne)
+print("\n".join(["PHRASE  "+str(c+1)+" ==> "+i for c,i in enumerate(t)]))
+
+
+
+
+
+open the file + read it + print numbe of caracters it contains then transfor to a utf16LE encoding and utf16BE
+f = open("ecole.txt","r")
+data = f.read()
+print('\nlength of file in UTF-8 = '+str(len(data))+' byte\n')
+f.close()
+f = open("ecoleUTF16LE.txt","w", encoding='utf-16-le')
+f = f.write(data)
+f = open('ecoleUTF16LE.txt', 'r')
+data1 = f.read()  
+print("\nlength of file in UTF-16LE = "+str(len(data1))+' byte\n')
+f.close()
+f = open("ecoleUTF16BE.txt","w", encoding='utf-16-be')
+f = f.write(data)
+f = open('ecoleUTF16BE.txt', 'r')
+data2 = f.read()  
+print("\nlength of file in UTF-16BE = "+str(len(data2))+' byte\n')
+f.close()

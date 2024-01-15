@@ -1,0 +1,55 @@
+\ et " reserver seulement pour les cara specieu 
+les numero sont pas des cara specieu
+fichier.l ==> flex
+Suite alphanumerique commancant par une lettre : [A-Za-z][A-Za-z0-9]* on peut l'utilise pour les idf 
+Cte numerique signe si il veut ecrire un zero donc il utilise pas le sgn : ([-+][1-9][0-9]*) | (0)
+flex --> analyse lexicale
+the lexical analyzer cannot catch that int ;a is wrong - this would be handled in bison
+l'implementation d'un compilateur necessite des milliers de lignes de codes flex et bisoon existent pour nous faciliter la tache
+Flex est un traducteur qui traduit notre analyseur lexical écrit dans un langage simple (flex) vers le langage C : prog.l --> flex -->lex.yy.c
+Bison est un générateur de code d’analyseur syntaxique, les fich bison ont l'extention .y : entite lex+grammaire (programme.y) --> Bison --> Code source de l’analyseur 
+syntaxique associé(programme.tab.c)
+Dans l’analyse lexicale il faut faire en sorte qu’à chaque entité lexicale du langage correspond un automate d’états finies. 
+Comment programmer des automates ? -- > Expressions régulières
+a chaque fois en rencontre une entite lex en incremente le nbr des colonnes 
+savoir la ligne et la colonnes c pour savoir l'err win rahi
+lazem la table pour l'ana semantique
+les fonctions nakatbouhom dans un fichier .h dans les quels les deux fichiers bison w flex y3aytolhom TS.h
+pour le projet il est preferqble dùutiliser les listes  pour la TS
+probleme de variable non inisialise a  nos de trouver la solution
+-lfl c'est l'argument qui inclut  la bib de flex au compilateur
+terminaux c flex qui les envoie
+
+- a travers yyval j'envoie les valeurs vers bison, Dans flex : yylval.entier = atoi(yytext) il ya aussi atof
+- pour utiliser if ($3 == .. ) il faut ajouter le type dans token, faut pas oublier d'aller vers flex et en envoyer sa valeur
+strdup elle duplique ex yylval.str = strdup(yytext)
+pour specifier le membre gauche  qui est tjr un non terminal: $$
+%type pour specifier le type des non terminaux
+- flex ne peut dire que x est de type int ,pour les lier il faut aller vers la gramm et chercher la regle qui sert a faire les declarations si j'appel cet gram alors on est sur que c la declaation alors on trouve les types je vais le sauvgarder dans la ts
+et il faut verifier qu'il n'est pas encore declarer
+- Il faut envoyer le saut d ligne vers bison
+- idf = expression 1)verifier que idf existe dans la ts sinn err/ 2) verifier  esq type de idf est compatible avec expression sinon err /3)MAJ la val de idf dens la ts 
+- les routines symentiques les plus demander : div par 0 + var non declaer + incompatibilite de type + MAJ type et idf
+la grammaire doit etre LALR(ascendante)
+avant  de generer les quad il faut faire les routines et verifier lincompatibilite de type ...
+yylex() : fuction permet de lancer l'analyseur lexical
+yytext c le contenu de l'ER et  yyleng est sa longeure
+
+
+
+
+
+Pour compiler le programme :
+flex lexical.l
+bison –d synt.y
+gcc lex.yy.c synt.tab.c –lfl –ly -o tp
+
+Pour exécuter le programme :
+tp<exemple.txt
+
+
+
+
+
+
+

@@ -1,0 +1,40 @@
+A LIRE : https://blog.netwrix.fr/2019/06/20/la-base-de-donnees-dactive-directory/
+- il recoit des requets et repends a ses requetes
+- pc tres puissant
+- il faut jamais arreter les serveurs
+1er chose : lier le client vers le serveur : donner ou serveur l'adresse ip est statique
+
+wch 9rina f tp :
+- Préparation de l’environnement, Installation et configuration du Serveur DNS et du contrôleur de 
+domaine.
+- Compte utilisateur local, compte utilisateur de domaine et compte ordinateur
+- Gestion de groupes
+- Autorisation d’accès aux ressources partagées
+- Modification des autorisations sur les objets Active Directory
+- L’utilisation des stratégies de group
+- Administration d’un ordinateur à distance
+
+console mmc : regrouper des outils d'administration pour queles users l'utilisent
+organiser les utiliateur dans l'unte d'organisation 
+
+site = plusieurs domaines
+GPO est un script
+
+lazem tsra verification de reseaux avant l'exe du script gpo bach serveur yb3at le script
+les proprietes LDAP kamel a chaque ouverture de session yatab9o 
+
+gpupdate : si la connectivite etait mal l'ors du demarrage le user ydkhol la session yl9a beli la gpo matab9atch donc pour forcer la gpo ydir gpupdate ( l user y3ayat l serveur bach y9olo ab3atli gpo )
+
+\\SOAYAKHENE\Marketing
+
+QUESTIONS :
+esq les ordi du domaine lazem ykouno 3ndhom le meme operating system wela machi lazem ?
+c quoi workgroup ?
+w9tach ndjm3o l users f des group w we9tach f uo ? kima f sécurité de partage :
+pour organiser l users on les mis dakhel UO donc hadi toujours
+cas particulier f le cas du partage on cree des groups
+wch derna kemel f les grp 
+f les exo y9olo serveurs ?
+Persmission de partage vs permissions ntfs:
+- Les permissions de partage contrôlent l'accès aux ressources partagées via le réseau. Elles déterminent qui peut accéder au partage lui-même
+- Les permissions NTFS, quant à elles, sont des autorisations qui s'appliquent au système de fichiers NTFS. Elles déterminent les actions spécifiques qu'un utilisateur ou un groupe peut effectuer sur les fichiers et dossiers, tels que la lecture, l'écriture, la modification ou la suppression.

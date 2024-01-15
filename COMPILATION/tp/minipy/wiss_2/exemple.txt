@@ -1,0 +1,3 @@
+int X
+float Y
+X=Y

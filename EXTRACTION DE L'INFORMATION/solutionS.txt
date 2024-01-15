@@ -1,0 +1,25 @@
+#Extraire tous les mots en majuscules.
+import re,sys
+s=open("res",'w',encoding='utf-16')
+# ---------------------------------
+# Solution
+s.write("\n".join(re.findall("[A-Z][A-ZÎÉÈÀ]+",open(sys.argv[1],encoding="utf-16").read())))#ou "[A-ZÎÉÈÀ]{2,}"
+# -------------------------------
+#Extraire les phrases interrogatives suivies de "Il" et précédées de "
+# Solution
+s.write("Ph. interrogative ==> : "+"\nPh. interrogative ==> : ".join(re.findall("(?<=\")(.+\?)(?= Il)",open(sys.argv[1],encoding="utf-16").read()))+"\n")
+# --------------------------------
+#Extraire les sauts de ligne précédés de : "tout. "
+#La chaîne de caractères "tout" (sans le point et l'espace) doit être placée dans une variable.
+#Proposer deux solutions pour intégrer cette chaîne de caractères dans la regex.
+# Solution 1
+a="tout"
+for i in open(sys.argv[1],encoding="utf-16").readlines():
+x=re.search(f" {a}. (.$)",i,re.S)
+s.write("Saut de ligne ===>"+x.groups()[0])if x else''
+
+# Solution 2
+a="tout"
+for i in open(sys.argv[1],encoding="utf-16").readlines():
+x=re.search(" "+re.escape(a)+". (.$)",i,re.S)
+s.write("Saut de ligne ===>"+x.groups()[0]) if x else'

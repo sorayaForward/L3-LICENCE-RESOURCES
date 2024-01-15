@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p align="center">Entrez les valeurs des deux operands et choisissez une operation :</p>
+    <form align="center" action="calculatrice.php" method="GET">
+        <input type="text" name="operand1"/>
+        <select name="opp">
+            <option value="vide"></option>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="text" name="operand2"/>
+        <br>
+        <br>
+        <input type="submit" name="calculer" value="Calculer">
+
+    </form>
+
+</body>
+</html>

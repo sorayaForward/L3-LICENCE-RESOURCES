@@ -1,0 +1,9 @@
+int X[2]
+for X in X:
+    X=X-1
+#hhhhhhhh
+H=H+1
+
+
+
+

@@ -1,0 +1,11 @@
+DEBUT.
+
+
+INTEGER Aa, Bb, Cc;
+REAL X, Y;
+CONST INTEGER Amine=1299, Compteur=100;
+CONST INTEGER Var2=19848;
+
+X=Y;
+
+FIN.
